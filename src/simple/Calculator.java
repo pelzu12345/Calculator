@@ -10,7 +10,6 @@ public class Calculator implements SimpleCalculator{
         String tempString =dataGrabber.getTypeOfMathematicalOperation().toLowerCase();
         if (tempString.contains("addition")||tempString.contains("+")){
             operations.addition(dataGrabber);
-
         }else if (tempString.contains("subtraction")||tempString.contains("-")){
             operations.subtraction(dataGrabber);
         }else if (tempString.contains("multiplication")||tempString.contains("*")){
@@ -23,16 +22,16 @@ public class Calculator implements SimpleCalculator{
     private class Operations {
         private void addition(DataGrabber dataGrabber){
 
-            System.out.println(dataGrabber.getFirstNumber()+ dataGrabber.getSecondNumber());
+            System.out.println(Math.addExact(dataGrabber.getFirstNumber(),dataGrabber.getSecondNumber()) );
         }
         private void subtraction(DataGrabber dataGrabber){
-            System.out.println(dataGrabber.getFirstNumber()- dataGrabber.getSecondNumber());
+            System.out.println(Math.subtractExact(dataGrabber.getFirstNumber(),dataGrabber.getSecondNumber()));
         }
         private void multiplication(DataGrabber dataGrabber){
-            System.out.println(dataGrabber.getFirstNumber()* dataGrabber.getSecondNumber());
+            System.out.println(Math.multiplyExact(dataGrabber.getFirstNumber(),dataGrabber.getFirstNumber()));
         }
         private void division(DataGrabber dataGrabber){
-            System.out.println(dataGrabber.getFirstNumber()/ dataGrabber.getSecondNumber());
+            System.out.println(Math.floorDiv(dataGrabber.getFirstNumber(), dataGrabber.getSecondNumber()));
         }
     }
 }

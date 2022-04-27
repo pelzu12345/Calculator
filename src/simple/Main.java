@@ -9,7 +9,6 @@ public class Main {
 
         Calculator calculator=new Calculator();
         calculator.calculate(dataGrabber);
-        System.out.println(Math.addExact(1,1));
 
     }
 }
